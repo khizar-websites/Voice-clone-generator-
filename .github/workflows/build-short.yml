@@ -19,8 +19,8 @@ jobs:
       - name: Install TTS stack
         run: |
           pip install six
-          pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
-          pip install "coqui-tts[codec]"
+          pip install "torch==2.8.*" "torchaudio==2.8.*" --index-url https://download.pytorch.org/whl/cpu
+          pip install "coqui-tts==0.28.0"
 
       - name: Clone voice and write narration
         run: python make_narration.py
