@@ -1,0 +1,40 @@
+name: build-short
+
+on:
+  workflow_dispatch:
+  push:
+    paths: ["story.json", "*.py", "samples/**", ".github/workflows/**"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install TTS stack
+        run: |
+          pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install "coqui-tts[codec]"
+
+      - name: Clone voice and write narration
+        run: python make_narration.py
+
+      - name: Generate scene images
+        run: python image_gen.py
+
+      - name: Assemble short video
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          python assemble.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: final-short
+          path: output/final_short.mp4
+          retention-days: 7
