@@ -1,12 +1,12 @@
-name: build-short
+name: build-narration
 
 on:
   workflow_dispatch:
   push:
-    paths: ["story.json", "*.py", "samples/**", ".github/workflows/**"]
+    paths: ["story.json", "make_narration.py", "samples/**", ".github/workflows/**"]
 
 jobs:
-  build:
+  narration:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -22,29 +22,20 @@ jobs:
           pip install "torch==2.8.*" "torchaudio==2.8.*" --index-url https://download.pytorch.org/whl/cpu
           pip install "coqui-tts==0.28.0"
 
-      - name: Cache images and narration
+      - name: Restore narration cache
         uses: actions/cache@v4
         with:
-          path: |
-            images
-            output/narration_raw.wav
-          key: short-${{ hashFiles('story.json', 'samples/**', 'image_gen.py', 'make_narration.py') }}
-          restore-keys: short-
+          path: output/narration_raw.wav
+          key: narration-${{ hashFiles('story.json', 'samples/**', 'make_narration.py') }}
+          restore-keys: narration-
 
       - name: Clone voice and write narration
-        run: python make_narration.py
-
-      - name: Generate scene images
-        run: python image_gen.py
-
-      - name: Assemble short video
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg
-          python assemble.py
+          if [ -f output/narration_raw.wav ]; then echo "cached narration found"; exit 0; fi
+          python make_narration.py
 
       - uses: actions/upload-artifact@v4
         with:
-          name: final-short
-          path: output/final_short.mp4
+          name: narration
+          path: output/narration_raw.wav
           retention-days: 7
