@@ -18,7 +18,7 @@ jobs:
 
       - name: Install TTS stack
         run: |
-          pip install six
+          pip install six "transformers>=4.48,<5"
           pip install "torch==2.8.*" "torchaudio==2.8.*" --index-url https://download.pytorch.org/whl/cpu
           pip install "coqui-tts==0.28.0"
 
