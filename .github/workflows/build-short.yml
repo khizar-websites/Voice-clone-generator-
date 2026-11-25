@@ -22,6 +22,15 @@ jobs:
           pip install "torch==2.8.*" "torchaudio==2.8.*" --index-url https://download.pytorch.org/whl/cpu
           pip install "coqui-tts==0.28.0"
 
+      - name: Cache images and narration
+        uses: actions/cache@v4
+        with:
+          path: |
+            images
+            output/narration_raw.wav
+          key: short-${{ hashFiles('story.json', 'samples/**', 'image_gen.py', 'make_narration.py') }}
+          restore-keys: short-
+
       - name: Clone voice and write narration
         run: python make_narration.py
 
