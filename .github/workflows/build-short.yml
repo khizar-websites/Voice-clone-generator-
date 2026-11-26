@@ -26,8 +26,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: output/narration_raw.wav
-          key: narration-${{ hashFiles('story.json', 'samples/**', 'make_narration.py') }}
-          restore-keys: narration-
+          key: narr-v2-${{ hashFiles('story.json', 'samples/**', 'make_narration.py') }}
 
       - name: Clone voice and write narration
         run: |
