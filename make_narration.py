@@ -21,7 +21,7 @@ tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2")
 tts.to("cuda" if os.environ.get("USE_GPU") == "1" else "cpu")
 
 tts.tts_to_file(
-    text=story["script"],
+    text=story["narration"],
     speaker_wav=sample,
     language="hi",
     file_path=os.path.join(ROOT, "output", "narration_raw.wav"),
