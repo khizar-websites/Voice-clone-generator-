@@ -3,7 +3,7 @@ name: build-narration
 on:
   workflow_dispatch:
   push:
-    paths: ["story.json", "make_narration.py", "samples/**", ".github/workflows/**"]
+    paths: ["story.json", "make_narration.py", "voices.json", "samples/**", ".github/workflows/**"]
 
 jobs:
   narration:
@@ -21,14 +21,15 @@ jobs:
           pip install six "transformers>=4.48,<5"
           pip install "torch==2.8.*" "torchaudio==2.8.*" --index-url https://download.pytorch.org/whl/cpu
           pip install "coqui-tts==0.28.0"
+          pip install edge-tts
 
       - name: Restore narration cache
         uses: actions/cache@v4
         with:
           path: output/narration_raw.wav
-          key: narr-v2-${{ hashFiles('story.json', 'samples/**', 'make_narration.py') }}
+          key: narr-v3-${{ hashFiles('story.json', 'voices.json', 'samples/**', 'make_narration.py') }}
 
-      - name: Clone voice and write narration
+      - name: Generate narration
         run: |
           if [ -f output/narration_raw.wav ]; then echo "cached narration found"; exit 0; fi
           python make_narration.py
@@ -36,5 +37,8 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: narration
-          path: output/narration_raw.wav
+          path: |
+            output/narration_raw.wav
+            output/words.json
+          if-no-files-found: warn
           retention-days: 7

@@ -1,0 +1,190 @@
+{
+  "default_voice": "khizar",
+  "voices": [
+    {
+      "id": "khizar",
+      "name": "Khizar (original voice clone)",
+      "engine": "xtts",
+      "sample": "khizar.mp3",
+      "language": "hi",
+      "gender": "male",
+      "style": "personal cloned voice — Hindi/Roman Urdu narration"
+    },
+    {
+      "id": "en-US-AndrewMultilingualNeural",
+      "name": "Andrew (US, multilingual HD)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "male",
+      "style": "warm conversational storyteller — vlog/essay YouTuber vibe"
+    },
+    {
+      "id": "en-US-BrianMultilingualNeural",
+      "name": "Brian (US, multilingual HD)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "male",
+      "style": "casual documentary narrator — deep-dive video essay vibe"
+    },
+    {
+      "id": "en-US-AvaMultilingualNeural",
+      "name": "Ava (US, multilingual HD)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "female",
+      "style": "bright friendly host — explainer/facts channel vibe"
+    },
+    {
+      "id": "en-US-EmmaMultilingualNeural",
+      "name": "Emma (US, multilingual HD)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "female",
+      "style": "soft engaging narrator — story-time vibe"
+    },
+    {
+      "id": "en-US-ChristopherNeural",
+      "name": "Christopher (US)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "male",
+      "style": "deep calm documentary voice (used: oxygen + rings shorts)"
+    },
+    {
+      "id": "en-US-GuyNeural",
+      "name": "Guy (US)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "male",
+      "style": "energetic news-anchor — high-energy facts channel vibe"
+    },
+    {
+      "id": "en-US-AndrewNeural",
+      "name": "Andrew (US)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "male",
+      "style": "natural warm male — chill commentary vibe"
+    },
+    {
+      "id": "en-US-BrianNeural",
+      "name": "Brian (US)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "male",
+      "style": "relaxed casual male — mystery/creepypasta vibe"
+    },
+    {
+      "id": "en-US-RogerNeural",
+      "name": "Roger (US)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "male",
+      "style": "lively upbeat male — listicle/top-10 vibe"
+    },
+    {
+      "id": "en-US-EricNeural",
+      "name": "Eric (US)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "male",
+      "style": "rational steady male — science/tech review vibe"
+    },
+    {
+      "id": "en-GB-RyanNeural",
+      "name": "Ryan (UK)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "male",
+      "style": "British male — BBC-style documentary vibe"
+    },
+    {
+      "id": "en-GB-ThomasNeural",
+      "name": "Thomas (UK)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "male",
+      "style": "calm British male — history channel vibe"
+    },
+    {
+      "id": "en-GB-SoniaNeural",
+      "name": "Sonia (UK)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "female",
+      "style": "British female — elegant storytelling vibe"
+    },
+    {
+      "id": "en-AU-WilliamNeural",
+      "name": "William (AU)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "male",
+      "style": "Australian male — laid-back adventure vibe"
+    },
+    {
+      "id": "en-AU-NatashaNeural",
+      "name": "Natasha (AU)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "female",
+      "style": "Australian female — travel vlog vibe"
+    },
+    {
+      "id": "en-IE-ConnorNeural",
+      "name": "Connor (IE)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "male",
+      "style": "Irish male — friendly banter vibe"
+    },
+    {
+      "id": "en-ZA-LukeNeural",
+      "name": "Luke (ZA)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "male",
+      "style": "South African male — wildlife documentary vibe"
+    },
+    {
+      "id": "en-IN-PrabhatNeural",
+      "name": "Prabhat (IN)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "male",
+      "style": "Indian English male — desi-tech English vibe"
+    },
+    {
+      "id": "en-IN-NeerjaNeural",
+      "name": "Neerja (IN)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "female",
+      "style": "Indian English female — bright presenter vibe"
+    },
+    {
+      "id": "en-US-JennyNeural",
+      "name": "Jenny (US)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "female",
+      "style": "warm sincere female — motivational vibe"
+    },
+    {
+      "id": "en-US-AriaNeural",
+      "name": "Aria (US)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "female",
+      "style": "crisp professional female — news/explainer vibe"
+    },
+    {
+      "id": "en-US-MichelleNeural",
+      "name": "Michelle (US)",
+      "engine": "edge",
+      "language": "en",
+      "gender": "female",
+      "style": "confident female — lifestyle channel vibe"
+    }
+  ]
+}
